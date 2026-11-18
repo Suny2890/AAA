@@ -176,7 +176,7 @@ function Cover({ slide }) {
 
       <div className="unification-art">
         <img
-          src="/unification-illustration.png"
+          src={import.meta.env.BASE_URL + "unification-illustration.png"}
           alt="서로 어깨동무하는 세 친구와 평화의 비둘기"
         />
       </div>
