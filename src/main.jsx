@@ -58,12 +58,21 @@ const slides = [
     ],
     takeaway: '핵심: 평화적으로, 서로 존중하며, 국민의 공감과 합의를 바탕으로 준비하기',
   },
+
+  // NEW: 영상 슬라이드
+  {
+    type: 'video',
+    eyebrow: 'VIDEO TIME',
+    title: ['영상으로 알아보는', '통일의 이야기'],
+    description: '영상을 시청한 뒤 배운 내용을 퀴즈로 확인해 봅시다.',
+  },
+
   {
     type: 'quiz',
     eyebrow: 'CHECK YOUR THINKING · 01',
     title: ['북한을 바라보는', '나의 시선'],
     question: '북한 주민과 북한의 정치·군사적 상황은 구분해서 바라볼 필요가 있다.',
-    answer: 'O (맞아요)',
+    answer: 'O',
     explanation: '북한의 정책이나 체제에 대한 판단과 북한 주민 한 사람 한 사람에 대한 이해는 구분할 수 있어야 합니다. 다양한 정보를 바탕으로 균형 있게 바라보는 태도가 중요합니다.',
   },
   {
@@ -71,7 +80,7 @@ const slides = [
     eyebrow: 'CHECK YOUR THINKING · 02',
     title: ['통일의 의미와', '가치 알아보기'],
     question: '통일은 단순히 남한과 북한의 제도와 영토를 하나로 합치는 것만을 의미한다.',
-    answer: 'X (틀려요)',
+    answer: 'X',
     explanation: '통일은 분단으로 생긴 갈등과 아픔을 줄이고, 서로의 차이를 이해하며 평화롭게 함께 살아갈 공동체를 만들어 가는 과정이기도 합니다.',
   },
   {
@@ -79,7 +88,7 @@ const slides = [
     eyebrow: 'CHECK YOUR THINKING · 03',
     title: ['바람직한 통일의', '방향은 무엇일까?'],
     question: '바람직한 통일을 위해서는 서로의 차이를 존중하고, 대화와 교류를 통해 평화적으로 준비해야 한다.',
-    answer: 'O (맞아요)',
+    answer: 'O',
     explanation: '통일은 어느 한쪽의 생각을 강요하는 방식이 아니라, 서로를 존중하고 합의와 평화를 바탕으로 차근차근 준비하는 방향이어야 합니다.',
   },
   {
@@ -127,6 +136,7 @@ function App() {
         {slide.type === 'cover' && <Cover slide={slide} />}
         {slide.type === 'goals' && <Goals slide={slide} />}
         {slide.type === 'content' && <Content slide={slide} />}
+        {slide.type === 'video' && <Video slide={slide} />}
         {slide.type === 'quiz' && <Quiz slide={slide} />}
         {slide.type === 'summary' && <Summary />}
       </section>
@@ -176,7 +186,7 @@ function Cover({ slide }) {
 
       <div className="unification-art">
         <img
-          src={import.meta.env.BASE_URL + "unification-illustration.png"}
+          src={import.meta.env.BASE_URL + 'unification-illustration.png'}
           alt="서로 어깨동무하는 세 친구와 평화의 비둘기"
         />
       </div>
@@ -229,6 +239,43 @@ function Content({ slide }) {
       </div>
 
       <p className="content-takeaway">{slide.takeaway}</p>
+    </div>
+  )
+}
+
+// NEW: 유튜브 영상 슬라이드
+function Video({ slide }) {
+  return (
+    <div className="quiz-content">
+      <p className="content-lead">{slide.description}</p>
+
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          width: '100%',
+          marginTop: '20px',
+        }}
+      >
+        <iframe
+          src="https://www.youtube.com/embed/jP9bIExONO4"
+          title="통일 관련 유튜브 쇼츠"
+          style={{
+            width: '100%',
+            maxWidth: '360px',
+            aspectRatio: '9 / 16',
+            border: 'none',
+            borderRadius: '18px',
+          }}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
+
+      <p className="quiz-hint">
+        영상 시청을 마쳤다면 다음 버튼을 눌러 퀴즈를 풀어 보세요.
+      </p>
     </div>
   )
 }
