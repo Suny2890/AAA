@@ -63,7 +63,7 @@ const slides = [
   {
     type: 'video',
     eyebrow: 'VIDEO TIME',
-    title: ['영상으로 알아보는', '통일의 이야기'],
+    title: ['영상으로 알아봅시다'],
     description: '영상을 시청한 뒤 배운 내용을 퀴즈로 확인해 봅시다.',
   },
 
