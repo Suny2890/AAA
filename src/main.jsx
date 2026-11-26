@@ -103,9 +103,9 @@ const slides = [
     type: 'video',
     eyebrow: 'VIDEO TIME',
 
-    title: ['영상으로 보는 비참한 현실'],
+    title: ['영상'],
 
-    description: '영상을 시청한 뒤 배운 내용을 퀴즈로 확인해 봅시다.',
+    description: '남북한 사이에 국제적 협력이 이뤄지지 않았을때 생기는 현상을 영상으로 봅시다.',
   },
   {
     type: 'quiz',
