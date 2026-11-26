@@ -1,10 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
 
-/* =========================================
-   01. GLOBAL
-========================================= */
-
 :root {
   font-family: 'Noto Sans KR', sans-serif;
   color: #263e43;
@@ -71,16 +67,8 @@ button:focus-visible {
   padding: 35px 65px 95px;
 
   background:
-    radial-gradient(
-      circle at 8% 12%,
-      rgba(233, 199, 127, 0.15),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 92% 85%,
-      rgba(164, 93, 67, 0.09),
-      transparent 30%
-    ),
+    radial-gradient(circle at 8% 12%, rgba(233, 199, 127, 0.15), transparent 28%),
+    radial-gradient(circle at 92% 85%, rgba(164, 93, 67, 0.09), transparent 30%),
     var(--cream);
 }
 
@@ -340,8 +328,13 @@ h1 span {
   gap: 18px;
 }
 
+.content-cards:has(.content-card:nth-child(4):last-child) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .content-card {
   min-height: 245px;
+  height: auto;
   padding: 25px 23px;
   background: var(--paper);
   border: 1px solid var(--line);
@@ -380,6 +373,11 @@ h1 span {
 .tone-2 {
   background: #e9e2d9;
   color: #8a7054;
+}
+
+.tone-3 {
+  background: #e5e5ef;
+  color: #696b91;
 }
 
 .content-card-top {
@@ -426,6 +424,158 @@ h1 span {
   font-weight: 700;
   line-height: 1.8;
   word-break: keep-all;
+}
+
+/* =========================================
+   06-1. VIDEO
+========================================= */
+
+.video .quiz-content {
+  margin-top: 12px;
+}
+
+.video .quiz-content .content-lead {
+  margin-bottom: 8px;
+}
+
+.video-frame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 8px auto 0;
+}
+
+.video-frame iframe {
+  display: block;
+  width: min(280px, 25vw, calc((100svh - 260px) * 9 / 16));
+  aspect-ratio: 9 / 16;
+  border: 0;
+  border-radius: 18px;
+}
+
+/* =========================================
+   06-2. FOUR CARD SLIDE
+========================================= */
+
+.content:has(.four-cards) .slide {
+  overflow-y: auto;
+  padding-top: 8px;
+  padding-bottom: 12px;
+}
+
+.content:has(.four-cards) .eyebrow {
+  margin-bottom: 12px;
+}
+
+.content:has(.four-cards) h1 {
+  font-size: clamp(38px, 4vw, 50px);
+  line-height: 1.18;
+}
+
+.content-area:has(.four-cards) {
+  margin-top: 13px;
+}
+
+.content-area:has(.four-cards) .content-lead {
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.content-cards.four-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 12px;
+}
+
+.content-cards.four-cards .content-card {
+  min-height: 165px;
+  height: auto;
+  padding: 15px 17px;
+  border-radius: 17px;
+}
+
+.content-cards.four-cards .content-number {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 9px;
+  font-size: 12px;
+}
+
+.content-cards.four-cards .content-card-top {
+  margin-bottom: 8px;
+}
+
+.content-cards.four-cards .content-card-top b {
+  font-size: 15px;
+}
+
+.content-cards.four-cards .content-card-top span {
+  padding: 4px 8px;
+  font-size: 10px;
+}
+
+.content-cards.four-cards .content-card p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.content-area:has(.four-cards) .content-takeaway {
+  margin-top: 12px;
+  padding: 11px 15px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* 화면이 낮은 노트북 */
+@media (max-height: 800px) and (min-width: 761px) {
+  .content:has(.four-cards) .slide {
+    padding-top: 4px;
+    padding-bottom: 8px;
+  }
+
+  .content:has(.four-cards) .eyebrow {
+    margin-bottom: 8px;
+  }
+
+  .content:has(.four-cards) h1 {
+    font-size: 40px;
+    line-height: 1.12;
+  }
+
+  .content-area:has(.four-cards) {
+    margin-top: 9px;
+  }
+
+  .content-area:has(.four-cards) .content-lead {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .content-cards.four-cards {
+    gap: 9px;
+  }
+
+  .content-cards.four-cards .content-card {
+    min-height: 145px;
+    padding: 11px 14px;
+  }
+
+  .content-cards.four-cards .content-card p {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .content-area:has(.four-cards) .content-takeaway {
+    margin-top: 9px;
+    padding: 9px 13px;
+    font-size: 11px;
+  }
+
+  .video-frame iframe {
+    width: min(260px, 24vw, calc((100svh - 220px) * 9 / 16));
+  }
 }
 
 /* =========================================
@@ -786,7 +936,8 @@ h1 span {
     font-size: 12px;
   }
 
-  .content-cards {
+  .content-cards,
+  .content-cards:has(.content-card:nth-child(4):last-child) {
     grid-template-columns: 1fr;
   }
 
@@ -853,6 +1004,10 @@ h1 span {
 
   .page-count {
     display: none;
+  }
+
+  .video-frame iframe {
+    width: min(280px, 75vw);
   }
 }
 
@@ -955,7 +1110,7 @@ h1 span {
   }
 
   .content-card {
-    min-height: 210px;
+    min-height: 180px;
     padding: 18px;
   }
 
@@ -985,6 +1140,11 @@ h1 span {
     bottom: 23px;
   }
 }
+
+/* =========================================
+   14. COVER IMAGE
+========================================= */
+
 .unification-art img {
   display: block;
   width: 100%;
