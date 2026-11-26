@@ -290,7 +290,7 @@ function Video({ slide }) {
 
       <div className="video-frame">
         <iframe
-          src="https://www.youtube.com/embed/jP9bIExONO4"
+          src="https://youtube.com/shorts/jP9bIExONO4?si=FluIJT8MgSoblYiB"
           title="통일 관련 유튜브 쇼츠"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
