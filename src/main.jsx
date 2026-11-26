@@ -102,7 +102,9 @@ const slides = [
   {
     type: 'video',
     eyebrow: 'VIDEO TIME',
+
     title: ['영상으로 보는 비참한 현실'],
+
     description: '영상을 시청한 뒤 배운 내용을 퀴즈로 확인해 봅시다.',
   },
   {
