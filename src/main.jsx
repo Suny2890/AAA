@@ -246,7 +246,7 @@ const slides = [
         '서로 이해하기',
       ],
     ],
-    takeaway: '다음 퀴즈에서 북한식 표현을 직접 맞혀 봅시다.',
+    takeaway: '다음 퀴즈에서 북한식 표현을 직접 맞혀 보자라는 말입니다 예.',
   },
   {
     type: 'content',
@@ -310,12 +310,12 @@ const slides = [
     title: ['북한말', '퀴즈'],
     question: '북한에서 도시락, 국밥, 양파를 각각 무엇이라고 부를까요?',
     answer: '곽밥 · 온밥 · 둥굴파',
-    explanation: '도시락은 곽밥, 국밥은 온밥, 양파는 둥굴파라고 표현하는 예가 있습니다. 베이컨은 짠세겹살, 찌개는 지지개라고도 합니다.',
+    explanation: '도시락은 곽밥, 국밥은 온밥, 양파는 둥굴파라고 표현하는 예가 있습니다.',
   },
   {
     type: 'summary',
     eyebrow: 'TODAY’S SUMMARY',
-    title: ['오늘 배운 내용', '정리하기'],
+    title: ['배운 내용', '정리하기'],
   },
 ]
 
@@ -367,7 +367,7 @@ function App() {
           onClick={() => setPage(Math.max(0, page - 1))}
           disabled={page === 0}
         >
-          이전
+          이전으로
         </button>
 
         <div className="progress">
@@ -385,7 +385,7 @@ function App() {
           onClick={() => setPage(Math.min(page + 1, slides.length - 1))}
           disabled={page === slides.length - 1}
         >
-          다음
+          넘기기
         </button>
       </nav>
 
@@ -517,7 +517,7 @@ function Quiz({ slide }) {
       </article>
 
       <p className="quiz-hint">
-        먼저 스스로 생각해 본 뒤 정답을 확인해 보세요.
+        예. 알아서 잘 풀어주시길 껄껄  
       </p>
     </div>
   )
