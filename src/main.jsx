@@ -169,7 +169,7 @@ const slides = [
         '집단 활동',
       ],
     ],
-    takeaway: '출처: 한국민족문화대백과사전(사용자가 제공한 자료)',
+    takeaway: '출처: 한국민족문화대백과사전',
   },
   {
     type: 'content',
